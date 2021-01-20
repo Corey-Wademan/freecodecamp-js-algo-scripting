@@ -1,0 +1,16 @@
+// Find the missing Letter in the passed letter range and return it.
+// If all letters are present in the range, return undefined.
+// fearNotLetter("abce") should return "d"
+// fearNotLetter("stvwx") should return "u"
+// fearNotLetter("abcdefghjklmno") should return "i" 
+
+
+
+function fearNotLetter(str) {
+  
+  for (let x = 0; x <= str.length - 1; x++) {
+    if (str.charCodeAt(x) - str.charCodeAt(x - 1) > 1) {
+      return String.fromCharCode(str.charCodeAt(x - 1) + 1);
+    }
+  }
+}
