@@ -1,0 +1,21 @@
+// convertHTML("Dolce & Gabbana") should return "Dolce &amp; Gabbana"
+// convertHTML("Hamburgers < Pizza < Tacos") should return "Hamburgers &lt; Pizza &lt; Tacos"
+
+function convertHTML(str) {
+  function switcheroo(char) {
+    switch(char) {
+      case '&':
+        return '&amp;'
+      case '<':
+        return '&lt;';
+      case '>':
+        return '&gt;';
+      case '"':
+        return '&quot;';
+      case "'":
+        return '&apos;';
+    }
+  }
+  str = str.replace(/[&<>'"]/g, switcheroo) 
+    return str
+}
